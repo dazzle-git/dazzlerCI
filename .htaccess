@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteCond $1 !^(index\.php|html|images|assets|robots\.txt)
+RewriteCond %{REQUEST_FILENAME} !^(.+)\.htm$
+RewriteRule ^(.*)$ /dazzler_ci/index.php/$1 [L]
