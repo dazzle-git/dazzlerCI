@@ -1,0 +1,365 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" dir="ltr">
+
+<head lang="" dir="ltr">
+<meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="" />
+<meta name="description" content="Meta Description" />
+<meta name="keywords" content="Meta Keywords" />
+<title>Dazzler</title>
+
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="assets/css/bootstrap.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="assets/css/jquery.videocontrols.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="assets/css/msgboxlight.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all" />
+		
+	
+		<script type="text/javascript" src="assets/js/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.msgBox.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.videocontrols.js"></script>
+		<script type="text/javascript" src="assets/js/tools.js"></script>
+	<!--[if lt IE 9]>
+	        <script type="text/javascript" src="http://fusionfit.co/beta/js/respond.min.js"></script>
+	        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	
+	
+	</script>
+
+
+</head>
+
+<body>
+
+
+<div class="wrapper">
+
+	<header>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid nheader">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href=""><img src="images/logo.png"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+      <ul class="nav navbar-nav navbar-right">
+      	<li>
+      	 	<form name="searchform" id="searchform">
+			<div class="inner-addon right-addon">
+			   <i class="fa fa-search"></i><input type="text" class="searchtxt form-control" placeholder="Search" />
+			</div>
+			</form>
+		</li>
+      	
+      	      	
+      	
+       	       	<li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell-o"></i> <span class="nmgs lbl txt-notif">18</span></a>
+          <ul class="dropdown-menu arrow_box ddnotif notif-list" role="menu">          		
+					<li class=""><i class="fa fa-thumbs-o-up"></i> 3 commented your Video <span class="notif-time">few seconds ago</span></li>
+					<li class=""><i class="fa fa-thumbs-o-up"></i> 2 liked your profile <span class="notif-time">2 minutes ago</span></li>
+					<li class=""><i class="fa fa-thumbs-o-up"></i> 2 dazzled you <span class="notif-time">2 minutes ago</span></li>
+					<li class=""><i class="fa fa-thumbs-o-up"></i> 1 followed you <span class="notif-time">20 minutes ago</span></li>
+          </ul>
+       	</li>
+       	       	<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="modal" data-target="#uploadfile"><i class="fa fa-upload"></i> <span class="nmgs lbl">upload</span></a>
+       </li>
+      	 
+       <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img class="profileicon lbl" src="images/profile/noimage.jpg" border="0"> <span class="fa fa-angle-down"></span></a>
+          <ul class="dropdown-menu arrow_box" role="menu">
+          		<li><a href="user/profile"> Profile</a></li>
+          		<li><a href="user/profile"> Account Setting</a></li>
+          		<li><a href="user/logout">   Logout</a></li>
+          </ul>
+       </li>
+       
+       
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</header>
+	
+	<div class="container section">
+	
+	<div class="inbox">
+	<table class="table" border="0">
+		<thead>
+		<tr>
+		<td><span class="inboxtitle">Inbox</span></td>
+		<td class="right"><span  class="composetxt">Compose</span></td>
+		</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="inb-left">
+					<div class="tophead">
+							<label><input type="checkbox" name="msgid" id="msgid1"> Select All</label>
+							<div id="inboxactions" class="pull-right">
+							   <span class="act">Action <i class="fa fa-angle-down"></i></span>
+							   <span class="act"><i class="fa fa-eye"></i> Mark as Read</span>
+							   <span class="act"><i class="fa fa-trash"></i> Delete forever</span>
+					        </div>
+					  </div>
+					        <script>
+      						$("#inboxactions .act").click(function() {  
+								if($("#inboxactions").hasClass("expanded")) {
+									$("#inboxactions").removeClass("expanded");
+								} else {
+          							$("#inboxactions").addClass("expanded");
+								} 
+          					});
+          			</script>
+					<ul>
+						<li class="messagelist">
+							<input type="checkbox" name="msgid" id="msgid1">
+							<img src="images/mgsuser.jpg">
+							<p>
+							<span class="timeago">2 minutes ago</span>
+							<span class="muser">Markus John</span><br />
+							<span class="replied"></span> Hi
+							</p>							
+						</li>
+						<li class="messagelist">
+							<input type="checkbox" name="msgid" id="msgid1">
+							<img src="images/mgsuser.jpg">
+							<p>
+							<span class="timeago">December 09, 2013</span>
+							<span class="muser">Markus John</span><br />
+							&nbsp; Hey i just met you & this is crazy so h...
+							</p>							
+						</li>
+						<li class="messagelist">
+							<input type="checkbox" name="msgid" id="msgid1">
+							<img src="images/mgsuser.jpg">
+							<p>
+							<span class="timeago">2 minutes ago</span>
+							<span class="muser">Markus John</span><br />
+							<span class="replied"></span> Hi
+							</p>							
+						</li>
+						<li class="messagelist">
+							<input type="checkbox" name="msgid" id="msgid1">
+							<img src="images/mgsuser.jpg">
+							<p>
+							<span class="timeago">2 minutes ago</span>
+							<span class="muser">Markus John</span><br />
+							<span class="replied"></span> Hi
+							</p>							
+						</li>
+						<li class="messagelist">
+							<input type="checkbox" name="msgid" id="msgid1">
+							<img src="images/mgsuser.jpg">
+							<p>
+							<span class="timeago">2 minutes ago</span>
+							<span class="muser">Markus John</span><br />
+							<span class="replied"></span> Hi
+							</p>							
+						</li>
+						<li class="messagelist">
+							<input type="checkbox" name="msgid" id="msgid1">
+							<img src="images/mgsuser.jpg">
+							<p>
+							<span class="timeago">2 minutes ago</span>
+							<span class="muser">Markus John</span><br />
+							<span class="replied"></span> Hi
+							</p>							
+						</li>
+						<li class="messagelist">
+							<input type="checkbox" name="msgid" id="msgid1">
+							<img src="images/mgsuser.jpg">
+							<p>
+							<span class="timeago">2 minutes ago</span>
+							<span class="muser">Markus John</span><br />
+							<span class="replied"></span> Hi
+							</p>							
+						</li>
+						<li class="messagelist">
+							<input type="checkbox" name="msgid" id="msgid1">
+							<img src="images/mgsuser.jpg">
+							<p>
+							<span class="timeago">2 minutes ago</span>
+							<span class="muser">Markus John</span><br />
+							<span class="replied"></span> Hi
+							</p>							
+						</li>
+						<li class="messagelist">
+							<input type="checkbox" name="msgid" id="msgid1">
+							<img src="images/mgsuser.jpg">
+							<p>
+							<span class="timeago">2 minutes ago</span>
+							<span class="muser">Markus John</span><br />
+							<span class="replied"></span> Hi
+							</p>							
+						</li>
+					</ul>
+				
+				
+				</td>
+				
+				<td class="inb-right">
+					<div class="usermessages"><h3>Message From <span>Markus John</span></h3>
+					<div id="messageactions">
+							   <span class="act"><div class="actsettings"><img src="images/icosettings.png"> <i class="fa fa-angle-down"></i></div></span>
+							   <span class="act actlist"><i class="fa fa-flag-o"></i> Mark as Spam</span>
+							   <span class="act actlist"><i class="fa fa-eye"></i> Block User</span>
+							   <span class="act actlist"><i class="fa fa-trash"></i> Delete forever</span>
+					</div>
+					
+					 <script>
+      						$("#messageactions .act").click(function() {  
+								if($("#messageactions").hasClass("expanded")) {
+									$("#messageactions").removeClass("expanded");
+								} else {
+          							$("#messageactions").addClass("expanded");
+								} 
+          					});
+          			</script>
+          			
+          			
+          			<ul>
+						<li class="messagelist">
+							<img src="images/mgsuser.jpg">
+							<p>
+							<span class="timeago">10 minutes ago</span>
+							<span class="muser">Markus John</span><br />
+							<span class="replied"></span> Hi
+							</p>							
+						</li>
+						<li class="messagelist">
+							<img src="images/mgsuser1.jpg">
+							<p>
+							<span class="timeago">2 minutes ago</span>
+							<span class="muser">Taha Fakhruddin</span><br />
+							&nbsp; Hey i just met you & this is crazy so h...
+							</p>							
+						</li>
+						<li class="messagelist">
+							<img src="images/mgsuser1.jpg">
+							<div class="form-group replyform">
+							<textarea class="form-control cfc"></textarea>
+							<button class="btn sq pull-right">Send</button>
+							</div>					
+						</li>
+						
+					</ul>
+					
+      				</div>
+				
+				</td>
+				
+				
+				
+		</tbody>
+	
+	</table>
+	
+	 
+	
+	
+	</div>
+	
+					
+	</div>  <!--  section ends -->
+
+
+ 
+
+
+	
+	
+	<footer class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2"><h2>Dazzler</h2>
+				<ul>
+					<li><a href="aboutus">About Us</a></li>
+					<li><a href="asdad">Link 2</a></li>
+					<li><a href="asdad">Link 3</a></li>
+					<li><a href="asdad">Developers</a></li>
+					<li><a href="asdad">Jobs</a></li>
+				</ul>
+			</div>
+			<div class="col-md-2"><h2>Help</h2>
+				<ul>
+					<li><a href="asdad">Help Center</a></li>
+					<li><a href="asdad">Basics</a></li>
+					<li><a href="asdad">Video School</a></li>
+					<li><a href="help/faq">FAQ</a></li>
+					<li><a href="asdad">Forums</a></li>
+				</ul>
+			</div>
+			<div class="col-md-2"><h2>More</h2>
+				<ul>
+					<li><a href="asdad">On Demand</a></li>
+					<li><a href="asdad">Everywhere</a></li>
+					<li><a href="asdad">Upload</a></li>
+					<li><a href="asdad">Sitemap</a></li>
+				</ul>
+	
+			</div>
+			<div class="col-md-3"><h2>Legal</h2>
+				<ul>
+					<li><a href="terms">Terms & Conditions</a></li>
+					<li><a href="asdad">Website Terms of Use</a></li>
+					<li><a href="asdad">Website Terms of Use</a></li>
+					<li><a href="asdad">Website Terms of Use</a></li>
+				</ul>
+
+			</div>
+			<div class="col-md-3 mapps">
+					<br><br><img src="images/astore.jpg"><br><br><img src="images/gplay.jpg">	
+
+			</div>		
+		</div>		
+	</div>
+
+	<div class="container-fluid copyright">
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">Copyright &copy; 2012-2014 Dazzler.com. All videos & sounds &copy; belong to their respective owners.</div>
+				<div class="col-md-3">
+					<div class="social pull-right">
+					<i class="fa fa-facebook-square"></i>
+					<i class="fa fa-twitter-square"></i>
+					</div>
+				</div>
+			</div>		
+		</div>
+		
+	</div>
+</footer>
+	
+</div>
+
+	
+	
+		
+</body>
+
+
+
+
+</html>
+
+

@@ -1,0 +1,95 @@
+/* 
+    Document   : overlay
+    Created on : 17 Dec, 2014, 8:41:14 PM
+    Author     : user
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+div.description{
+	position:absolute; /* absolute position (so we can position it where we want)*/
+	bottom:0px; /* position will be on bottom */
+	left:0px;
+	width:88%;
+	/* styling bellow */
+	background-color:black;
+	font-family: 'tahoma';
+	font-size:15px;
+	color:white;
+	opacity:0.6; /* transparency */
+	filter:alpha(opacity=60); /* IE transparency */
+        
+}
+p.description_content{
+	padding:10px;
+	margin:0px;
+        float: right;
+}
+p.description_content button{
+    cursor: pointer;
+}
+
+.new-message-block,.new-message-detail{ 
+    display:none;
+}
+
+.message-scroll{
+    float:left;
+}
+
+.message-right-block{
+    float: right;
+    width:50%;
+}
+.action-block{
+    display: none;
+}
+.message-wrap{
+    display:table;
+}
+.top-message-block{
+    background-color: #449d44;
+    font-size: medium;
+}
+.compose-text{
+    float: right;
+    padding: 0px 5px;
+}
+.inbox-block span{
+    padding: 5px;
+}
+.message-top-block{
+    margin-top: 15px;
+}
+.user-detail span{
+    float:right;
+    margin-left: 150px;
+}
+.demo-list{
+    width: 100%;
+    
+}
+.message ul{
+    list-style: none;
+}
+
+input, optgroup, select, textarea{
+    color: inherit;
+    color: #000;
+    background-color: #fff;
+}
+.button{
+    color: inherit;
+    color: #000;
+    background-color: #003bb3;
+}
+.linkClass{
+    cursor: pointer;
+}
+.message-textarea{
+    width: 300px;
+}

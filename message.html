@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" dir="ltr">
+    <head lang="" dir="ltr">
+
+
+<meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="" />
+<meta name="description" content="Meta Description" />
+<meta name="keywords" content="Meta Keywords" /><title>Dazzler</title><link href="http://dazzler.com/styles/style.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://dazzler.com/styles/jquery.mCustomScrollbar.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://dazzler.com/styles/validationEngine.jquery.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://dazzler.com/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://dazzler.com/styles/msgBoxLight.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://dazzler.com/styles/dd.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="/images/favicon.ico" rel="favicon" type="image/x-icon" /><script type="text/javascript" src="http://dazzler.com/js/jquery-latest.js"></script>
+<script type="text/javascript" src="http://dazzler.com/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="http://dazzler.com/js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="http://dazzler.com/js/pace.min.js"></script>
+<script type="text/javascript" src="http://dazzler.com/js/jquery.mCustomScrollbar.min.js"></script>
+<script type="text/javascript" src="http://dazzler.com/js/jquery.fullscreen-min.js"></script>
+<script type="text/javascript" src="http://dazzler.com/js/all_in_one_1.2.js"></script>
+<script type="text/javascript" src="http://dazzler.com/js/all_in_one_2.js"></script>
+<script type="text/javascript" src="http://dazzler.com/js/sliders.js"></script>
+<script type="text/javascript" src="http://dazzler.com/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<script type="text/javascript" src="http://dazzler.com/js/jquery.reveal.js"></script>
+<script type="text/javascript" src="http://dazzler.com/js/general.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+
+
+var JQObj = jQuery.noConflict();
+JQObj(window).load(function(){ 
+    stopLoading();
+					JQObj('.newList').niceScroll();
+                     JQObj('#footer').show();
+					// scroll hide and show event 
+						var lastScrollTop = 0;
+						JQObj(window).scroll(function(event){
+						   var st = JQObj(this).scrollTop();
+						   if (st > lastScrollTop){
+							   JQObj('.user_bot_bar').hide();
+							   // downscroll code
+						   } else {
+							   JQObj('.user_bot_bar').show();
+							  // upscroll code
+						   }
+						   lastScrollTop = st;
+						});
+					// scroll hide and show event
+					
+			//For Footer Postion
+				JQObj(window).scroll(function() {
+				   if(JQObj(window).scrollTop() + JQObj(window).height() == JQObj(document).height()) {
+					   
+					   JQObj('.user_bot_bar').css('bottom','0px');
+					   JQObj('#footer').css('padding-top','0px');
+				   } else {
+					   JQObj('.user_bot_bar').css('bottom','0px');			   
+				   }
+				});
+		//For Footer Postion End
+		
+		
+			var objHeight = JQObj('.centerwrap').children('div');
+			
+			var totHeight = 0;
+			
+			JQObj(objHeight).each(function(){
+				totHeight = totHeight + JQObj(this).height();
+			  
+			})
+			var totBottom = 0;
+			if(totHeight < 781){
+				/*totBottom = 781 - totHeight ;
+				console.log([totBottom,totHeight]);
+				JQObj('#footer').css('padding-top','48px');
+				JQObj('.user_bot_bar').css('bottom',totBottom+'px');*/
+                                //JQObj('.user_bot_bar').hide();
+			}
+                        
+                setTimeout(function(){  
+                    if (JQObj("body").height() < JQObj(window).height()) {
+                            var totBottom = JQObj('#footer').position();
+                            totBottom = totBottom.top - 1;
+
+                            if(JQObj('.user_bot_bar').length != '0'){
+                                JQObj('#footer').css('padding-top','48px');
+                                JQObj('.user_bot_bar').css('top',totBottom+'px');
+                            }
+                    }
+                }, 100);
+});
+JQObj(document).ready(function(){	
+        startLoading();
+        JQObj('section').sliders();
+        JQObj('#footer').hide();
+        
+     
+
+	JQObj('.opentoggle').hide();
+	JQObj('.profilelist').hide();
+	JQObj('#more').on('click',function(){
+    	JQObj('.opentoggle').slideToggle();
+		JQObj('#more').addClass('active');
+		JQObj('#more span.down').toggleClass('up');
+		var className = JQObj('#more span').hasClass('up');
+		if(className === true){
+			JQObj('#text').html('Close');
+		}else{
+			JQObj('#text').html('More');
+		}	
+   	});
+	JQObj('#profiledata').on('click',function(e){
+		e.stopPropagation();
+		if(JQObj('.profilelist').is(':visible')){
+			JQObj('.profilelist').slideUp(200);
+		}else
+		{
+			JQObj('.profilelist').slideDown();
+		}
+   	});
+	
+	JQObj('.profilelist').on('click',function(e){
+		e.stopPropagation();
+	});
+	JQObj('html').on('click',function(){
+		JQObj('.profilelist').slideUp(200);
+	});
+        /*
+	JQObj('.allcategories').selectBox({
+		selectedClass:'.allcategories',
+		contWidth:100
+	});	
+	   	
+	JQObj('.fill-app-formrow').inputTextfield();
+	
+	JQObj('.types').selectBox({
+				selectedClass:'.types',
+				contWidth:138
+	}); */	
+});	
+
+	function notVerified(){
+			JQObj.msgBox({
+	                content: 'You are not verified by Admin!',
+	                type:'error'
+	         });
+	}
+
+	function startLoading() {
+		/*JQObj('#LoadingOverlay').css('visibility','visible');
+		JQObj('#Loadingbar').css('visibility','visible');*/
+		JQObj('#LoadingOverlay').css('visibility','visible');
+		Pace.start;
+	}
+	
+
+
+    
+
+    
+	
+	function stopLoading() {	
+		JQObj('#LoadingOverlay').css('visibility','hidden');
+		/*JQObj('#Loadingbar').css('visibility','hidden');*/
+		Pace.stop;
+	}
+
+function accessDenied() {
+	stopLoading();
+	message('Sorry you do not have permissions to access this page.','warning');
+	void(0);
+}
+
+function validateFrm(frmID) {
+	startLoading();
+	if(JQObj('#'+frmID).validationEngine('validate')){
+		JQObj('#'+frmID).submit();		
+	} else {
+                stopLoading();
+		return false;
+	}
+}
+
+function autoBind(bindSelector,bindEventFn,bindFn){
+	if (JQObj.livequery) {
+		if(JQObj.isFunction(bindFn)) {
+			JQObj(bindSelector).livequery(bindEventFn, bindFn);
+		} else {
+			JQObj(bindSelector).livequery(bindEventFn);
+		}
+	}
+}
+
+function loadEditor(loadElem,loadHeight,loadWidth,loadTheme,loadSkin,loadLang,loadPluginns,loadSkinColor){
+
+	if(window.CKEDITOR) {
+		loadCKEditor(loadElem,loadHeight,loadWidth,loadTheme,loadSkin,loadLang);
+	} else {
+		loadTinyMCE(loadElem,loadHeight,loadWidth,loadTheme,loadSkin,loadLang,loadPluginns,loadSkinColor);
+	}
+}
+
+function loadCKEditor(loadElem,loadHeight,loadWidth,loadToolBar,loadSkin,loadLang){
+	if(loadElem=='' || loadElem==null) {
+		loadElem='textarea';
+	}
+	if(loadToolBar=='' || loadToolBar==null) {
+		loadToolBar='Full'; //Basic,Full
+	}
+	if(loadHeight=='' || loadHeight==null) {
+		loadHeight='300px';
+	}
+	if(loadWidth=='' || loadWidth==null) {
+		loadWidth='815px';
+	}
+	if(loadLang=='' || loadLang==null) {		
+			loadLang='en';		
+	}
+	if(loadSkin=='' || loadSkin==null) {
+		loadSkin='kama';	//kama,v2,office2003
+	}
+
+	if(window.CKEDITOR) {
+		JQObj(loadElem).ckeditor(
+			function() { },
+			{
+				toolbar:loadToolBar
+				,baseHref:'http://dazzler.com/'
+				,height:loadHeight
+				,defaultLanguage:'en'
+				,language:loadLang
+				,skin:loadSkin
+				,theme:'default'
+				,width:loadWidth
+			}
+		);
+
+		if(window.CKFinder) {
+			var editor = JQObj(loadElem).ckeditorGet();
+			CKFinder.setupCKEditor(editor, 'http://dazzler.com/pluginns/ckfinder/');
+		}
+	}
+}
+
+function loadTinyMCE(loadElem,loadHeight,loadWidth,loadTheme,loadSkin,loadLang,loadPluginns,loadSkinColor){
+				if(loadElem=='' || loadElem==null) {
+					loadElem='textarea';
+				}
+				if(loadTheme=='' || loadTheme==null) {
+					loadTheme='advanced';	//advanced,simple
+				}
+				if(loadPluginns=='' || loadPluginns==null) {
+					loadPluginns='pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,spellchecker';
+				}
+				if(loadLang=='' || loadLang==null) {					
+						loadLang='en';					
+				}
+				if(loadSkin=='' || loadSkin==null) {
+					loadSkin='o2k7';	//o2k7,highcontrast,default
+				}
+				if(loadSkinColor=='' || loadSkinColor==null) {
+					loadSkinColor='silver';//silver,black
+				}
+				if(loadHeight=='' || loadHeight==null) {
+					loadHeight='300px';
+				}
+				if(loadWidth=='' || loadWidth==null) {
+					loadWidth='500px';
+				}
+	
+		//script_url : '<?php echo SERVER_PATH; ?>js/tinymce/jscripts/tiny_mce/tiny_mce_gzip.php',
+                JQObj(loadElem).tinymce({
+                        // Location of TinyMCE script
+                        script_url : 'http://dazzler.com/js/tinymce/jscripts/tiny_mce/tiny_mce.js',
+
+                        // General options
+                        language : loadLang, // change language here
+                        theme : loadTheme,
+                        plugins : loadPluginns,
+                        
+                        height:loadHeight,
+                        width:loadWidth,
+                        
+                        // Skin Settings
+                        skin : loadSkin,
+        				skin_variant : loadSkinColor,
+
+                        // Theme options
+                      
+                        
+                        theme_advanced_toolbar_location : 'top',
+                        theme_advanced_toolbar_align : 'left',
+                        theme_advanced_statusbar_location : 'bottom',
+                        theme_advanced_resizing : true,
+
+                        // Example content CSS (should be your site CSS)
+                        content_css : 'css/content.css',
+
+                        // Drop lists for link/image/media/template dialogs
+                        template_external_list_url : 'lists/template_list.js',
+                        external_link_list_url : 'lists/link_list.js',
+                        external_image_list_url : 'lists/image_list.js',
+                        media_external_list_url : 'lists/media_list.js',
+
+                        // Replace values for the template plugin
+                        template_replace_values : {
+                                username : 'Some User',
+                                staffid : '991234'
+                        }
+                });
+       
+}
+
+function reloadFancyBox(loadSelector) {		
+	startLoading();
+	
+	JQObj.ajax({
+	   type: 'POST',
+	   url: JQObj(loadSelector).attr('href'),
+	   dataType: 'html',
+	
+	   success: function(html){
+	   		JQObj.fancybox(html);
+			stopLoading();
+	   }
+	});
+}
+
+
+	function loadTooltip(loadEleId) {
+		if(loadEleId=='' || loadEleId==null)
+			loadEleId='a, img, input, textarea, select, button, div';
+			
+		JQObj(loadEleId).tooltip({
+			track: true,
+			delay: 0,
+			showURL: false,
+			showBody: ' - ',
+			fade: 250
+		});
+	}
+	
+	function loadAjaxFancybox(thisUrl,thisTitle) {
+		if(thisTitle=='' || thisTitle==null) {
+			thisTitle='Dazzler';
+		}
+	
+		JQObj.ajax({
+		   type: 'POST',
+		   url: thisUrl,
+		   
+		   success: function(data){
+			   	 JQObj.fancybox({
+			    	'padding'			: 1,
+					'margin'			: 1,
+					'showCloseButton'	: true,
+					'transitionIn'		: 'elastic',
+					'transitionOut'		: 'elastic',
+					'speedIn'			: 600, 
+					'speedOut'			: 200, 			
+					'overlayShow'		: true,
+					'overlayOpacity'	: 0.6,
+					'overlayColor'		: '#444349',
+					'centerOnScroll'	: true,
+					'title'				: thisTitle,
+					'titleShow'			: true,
+					
+					'autoDimensions'	: false,
+					'width'				: 'auto',
+					'height'			: 'auto',
+					'autoScale'			: true,			    
+			        'content' 			: data,			        
+			        'onComplete'		: function() {
+						JQObj.fancybox.resize();
+					}
+			    });
+		   },
+		   failure: function(e) {				
+				myAlert(e);
+			}
+		});
+		return false;
+	}
+	
+	function loadHrefFancybox(thisUrl,thisTitle) {
+		if(thisTitle=='' || thisTitle==null) {
+			thisTitle='Dazzler';
+		}
+		
+	   	 JQObj.fancybox({
+	    	'padding'			: 1,
+			'margin'			: 1,
+			'showCloseButton'	: true,
+			'transitionIn'		: 'elastic',
+			'transitionOut'		: 'elastic',
+			'speedIn'			: 600, 
+			'speedOut'			: 200, 			
+			'overlayShow'		: true,
+			'overlayOpacity'	: 0.6,
+			'overlayColor'		: '#444349',
+			'centerOnScroll'	: true,
+			'title'				: thisTitle,
+			'titleShow'			: true,
+			
+			'autoDimensions'	: false,
+			'width'				: 'auto',
+			'height'			: 'auto',
+			'autoScale'			: true,
+	    
+	        'href' 				: thisUrl,
+	        
+	        'onComplete'		: function() {
+				JQObj.fancybox.resize();
+			}
+	    });
+
+		return false;
+	}
+	
+	function loadIFrameFancyBox(eleId,thisTitle,fWidth,fHeight) {
+		if(thisTitle=='' || thisTitle==null) {
+			thisTitle='';
+		}
+		
+		if(fWidth=='' || fWidth==null) {
+			fWidth=665;
+		}
+		
+		if(fHeight=='' || fHeight==null) {
+			fHeight=420;
+		}
+		
+		JQObj(eleId).fancybox({
+			'padding'			: 1,
+			'margin'			: 1,
+			'showCloseButton'	: true,
+			'transitionIn'		: 'elastic',
+			'transitionOut'		: 'elastic',
+			'speedIn'			: 600, 
+			'speedOut'			: 200,
+			'easingIn'			: 'swing',
+			'easingOut'			: 'swing', 
+			'autoDimensions'	: true,
+			'overlayShow'		: true,
+			'overlayOpacity'	: 0.6,
+			'overlayColor'		: '#444349',
+			'centerOnScroll'	: true,
+			'width'				: parseInt(fWidth),
+			'height'			: parseInt(fHeight),
+			'autoScale'			: false,
+			'type'				: 'iframe',
+			'title'				: thisTitle,
+			'titleShow'			: true,
+			//'titleFormat'		: formatTitle,
+			
+			'onComplete'		: function() {
+			    JQObj.fancybox.resize();
+			}
+
+		});	
+	}
+	
+	function loadFancyBox(eleId,thisTitle) {
+		if(thisTitle=='' || thisTitle==null) {
+			thisTitle='Dazzler';
+		}
+		
+		JQObj(eleId).fancybox({
+			'padding'			: 1,
+			'margin'			: 1,
+			'showCloseButton'	: true,
+			'transitionIn'		: 'elastic',
+			'transitionOut'		: 'elastic',
+			'speedIn'			: 600, 
+			'speedOut'			: 200,
+			'easingIn'			: 'swing',
+			'easingOut'			: 'swing', 
+			'autoDimensions'	: true,
+			'overlayShow'		: true,
+			'overlayOpacity'	: 0.6,
+			'overlayColor'		: '#444349',
+			'centerOnScroll'	: true,		
+			'autoScale'			: true,
+			'title'				: thisTitle,
+			'titleShow'			: true
+		});	
+	}	
+	
+    //]]>
+</script><style type="text/css" media="screen">
+<!--
+
+	.blue_bg, #pagination-digg .active{background-color:# !important;}
+	.blue_text, .bluelink_text a, #pagination-digg a:link, #pagination-digg a:visited{color:# !important;}
+	.textbox2:focus, .textbox3:focus, #pagination-digg a{border:1px solid #;}	
+	
+
+-->
+</style><script src="/js/jquery.msgBox.js" type="text/javascript"></script>
+<script type="text/javascript">
+	JQObj(document).ready(function() {
+			});
+</script>
+</head>    <body lang="" dir="ltr">
+        <div id="LoadingOverlay"></div>
+	<div id="Loadingbar"></div>
+        <div class="wrapper">
+            <script type="text/javascript">
+
+JQObj(window).load(function(){
+					
+					
+					var controllername =  'message';
+					var actionname =  'index';
+					if((controllername == 'index' && actionname == 'index') || (controllername == 'index' && actionname == 'user')){
+
+						JQObj('.header').addClass('header_part');
+						JQObj('.header_part').removeClass('header');
+					} else {
+
+						JQObj('.header_part').addClass('header');
+						JQObj('.header').removeClass('header_part');
+					}
+					
+				})</script>
+
+
+<script type="text/javascript">
+    
+    var ntLmt = 7;
+	
+    JQObj(document).ready(function(){
+        
+                JQObj('#search').on('change',function(){
+                    JQObj('#target').submit();
+                });
+                
+                JQObj.ajax({
+			type:'post',
+			url:'/ajax/video/getnotification',			
+			data: 'limit='+ntLmt,
+                        success: function(html){
+                            var trgFlag = false;
+                            if(JQObj('.notify_final').find('ul').css('display') == 'block')
+                            {   
+                                trgFlag = true;
+                            }
+                            JQObj('.notify_final').html(html);
+                            
+                            if(trgFlag){
+                                JQObj('.notify_final').find('ul').toggle();
+                                JQObj("#content-3").mCustomScrollbar({
+                                    scrollButtons:{enable:true},
+                                    theme:"light-thick",
+                                    scrollbarPosition:"outside"
+                                });
+                            }
+                                                        
+			},
+                        error: function(e){
+                            console.log(e);
+                        },
+                        complete: function(e){
+                            //stopLoading();
+                        }
+		});
+                window.setInterval(function(){
+		JQObj.ajax({
+			type:'post',
+			url:'/ajax/video/getnotification',			
+			data: 'limit='+ntLmt,
+                        success: function(html){
+                            var trgFlag = false;
+                            if(JQObj('.notify_final').find('ul').css('display') == 'block')
+                            {   
+                                trgFlag = true;
+                            }
+                            JQObj('.notify_final').html(html);
+                            
+                            if(trgFlag){
+                                JQObj('.notify_final').find('ul').toggle();
+                                JQObj("#content-3").mCustomScrollbar({
+                                    scrollButtons:{enable:true},
+                                    theme:"light-thick",
+                                    scrollbarPosition:"outside"
+                                });
+                            }
+                                                        
+			},
+                        error: function(e){
+                            console.log(e);
+                        },
+                        complete: function(e){
+                            //stopLoading();
+                        }
+		});
+           }, 500000);
+                
+                JQObj(document).on('click','.notify_final',function(){  
+                        JQObj('.notify_final').find('ul').toggle();
+                        /*JQObj("#content-3").mCustomScrollbar({
+                                    scrollButtons:{enable:true},
+                                    theme:"light-thick",
+                                    scrollbarPosition:"outside"
+                                });*/
+                });
+                var click = 0;
+                JQObj('.pro_vie_opt_userdetail').on('click',function(){
+                    if(click == 0){
+                        //JQObj(this).find('a > span').fadeIn("slow");
+                        setTimeout(function(){JQObj('.pro_vie_opt_userdetail').find('a > span').fadeOut("slow");}, 2000);
+                        click++;
+                    } else {
+                        JQObj('.pro_vie_opt_userdetail').find('a > span').fadeOut("slow");
+                        click = 0;
+                    }
+                    JQObj('.pro_vie_opt_userdetail').find('a > span').fadeOut("slow");
+                    JQObj(this).find('ul').toggle();
+                    
+                })
+                var clickT = 0;
+                JQObj('.pro_vie_opt').on('click',function(){
+                    if(clickT == 0){
+                        //JQObj(this).find('a > span').fadeIn("slow");
+                        setTimeout(function(){JQObj('.pro_vie_opt').find('a > span').fadeOut("slow");}, 2000);
+                        clickT++;
+                    } else {
+                        JQObj('.pro_vie_opt').find('a > span').fadeOut("slow");
+                        clickT = 0;
+                    }
+                    JQObj('.pro_vie_opt').find('a > span').fadeOut("slow");
+                    JQObj(this).find('ul').toggle();
+                })
+                var clickTs = 0;
+                JQObj('.pro_drop').on('click',function(){
+                    if(clickTs == 0){
+                        JQObj(this).find('ul').addClass('new_hover_class');
+                       
+                        clickTs++;
+                    }else {
+                        JQObj(this).find('ul').removeClass('new_hover_class');
+                        clickTs = 0;
+                    }
+                    JQObj(this).find('li > ul').toggle();
+                })
+                
+                JQObj(document).mouseup(function (e)
+                {
+                    var container = JQObj(".pro_drop");
+
+                    if (!container.is(e.target) // if the target of the click isn't the container...
+                        && container.has(e.target).length === 0) // ... nor a descendant of the container
+                    {
+                        JQObj('.pro_drop').find('li > ul').hide();
+                    } 
+                    
+                    var containerthree = JQObj(".notify_final");
+
+                    if (!container.is(e.target) // if the target of the click isn't the container...
+                        && container.has(e.target).length === 0) // ... nor a descendant of the container
+                    {
+                        JQObj('.notify_final').find('ul').hide();
+                        JQObj('.pro_drop').find('ul').removeClass('new_hover_class');
+                        clickTs = 0;
+                    } 
+                    
+                    var containerone = JQObj(".pro_vie_opt");
+
+                    if (!container.is(e.target) // if the target of the click isn't the container...
+                        && container.has(e.target).length === 0) // ... nor a descendant of the container
+                    {
+                        JQObj('.pro_vie_opt').find('ul').hide();
+                    } 
+                    
+                    
+                    var containertwo = JQObj(".pro_vie_opt_userdetail");
+
+                    if (!container.is(e.target) // if the target of the click isn't the container...
+                        && container.has(e.target).length === 0) // ... nor a descendant of the container
+                    {
+                        JQObj('.pro_vie_opt_userdetail').find('ul').hide();
+                    } 
+                });
+                
+                });
+				
+				
+
+</script>
+<div class="header_part cm-fl">
+    	<div class="cm-fl logo"><a href="/"><img src="/images/logo.png" alt="logo" title="Dazzler" border="0"/></a></div>
+        <div class="cm-fr sign_search">
+        	 <div class="cm-fl user_area">
+                                 <a href="/index/user"><img src="/images/blank.png" alt="" class="user_icon  " border="0" title="Users" width="25" height="23"/></a>
+                <a href="/index/index/d/grid"><img src="/images/blank.png" alt="" class="grid_icon  " border="0" title="Grid" width="23" height="23"/></a>
+            </div>
+        	<div class="cm-fl search_left">
+                        
+                    <form action="/" id="target" method="post">
+                                                <input type="text" placeholder="Search" class="saerch_inpt" value="" id="search" name="search">
+                                              	<button type="button" class="search-btn"></button>  
+                    </form>
+                </div>
+        	<div class="cm-fl pro_drop">
+            	<ul class="pro_drop_first">
+    	        	<li>
+                            
+                    	<a href="javascript:void(0);">
+                                                               <img src="http://dazzler.com/images/noimage.gif" height="20px" width="20px" class="cm-fl" >					                        
+                            
+                            
+                            <span>Abdullah H...</span></a>
+                    	<ul>
+                            <li><a href="/user/userdetails/user_id/52"><img src="/images/pro-icon.png" alt="" border="0" /> My Profile</a></li>
+                            <li><a href="/message"><img src="/images/pro-mail-icon.png" border="0" /> MESSAGES</a></li>
+                            <li><a href="/user/updateprofile/uid/52"><img src="/images/pro-sett-icon.png" border="0" /> Settings</a></li>
+                            <li><a href="/user/helpsupport"><img src="/images/pro-support-icon.png" border="0" />Support</a></li>
+                            <li><a href="/user/signout"><img src="/images/pro-logout-icon.png" border="0" /> Log Out</a></li>
+                        </ul>
+                    </li>
+	            </ul>
+            </div>
+            <div class="cm-fl notify notify_final">
+            	
+            </div>
+                        <div class="upload-wrap">
+            	<a href="javascript:void(0)" data-reveal-id="myModal17" data-animation="fade" title="Upload" class="upload-btn">Upload</a>
+            </div>
+        </div>
+    </div>
+
+
+                            <div id="content-wrapper" class="centerwrap">
+                <script type="text/javascript" src="http://dazzler.com/js/jquery.icheck.min.js"></script>
+<script type="text/javascript" src="http://dazzler.com/js/jquery-ui.min.js"></script>
+<!--<link rel="stylesheet" type="text/css" href="http://dazzler.com/styles/jquery-ui.min.css" />
+--><link rel="stylesheet" type="text/css" href="http://dazzler.com/styles/iCheck.css" />
+<script type="text/javascript">
+$(document).ready(function(){
+	/*----message module----*/
+	$('.message-list li').click(function(){
+            JQObj(this).removeClass('unread-msg');
+            JQObj(this).find('.rmread').remove();
+                var glbMessage = $(this);
+                                    startLoading();
+                    JQObj.ajax({
+                            type:'post',
+                            url:'/ajax/message/getmessageuser',			
+                            data:'id='+JQObj(this).attr('id'),
+                            success: function(html){
+								JQObj(".messagelist-scroll").mCustomScrollbar('destroy');
+                                if(html != 'false'){
+                                    
+                                    $('.message-right-block .message-setting-wrap').html(html);
+                                    $('.no-message-text').hide();
+                                    $('.message-list li').removeClass('active').find('.input-check').removeAttr("checked");
+                                    $('.action-block').hide();
+                                    glbMessage.addClass('active');
+                                    $('.message-right-block .message-setting-wrap').show();
+                                    $('.new-message-detail').hide();
+                                    JQObj('.demo-list >.message-detail').each(function(){
+                                        if(JQObj(this).find('strong').html()==JQObj('.user-message-text>span').html()){
+                                            JQObj(this).find('.mds').html(JQObj('.message-setting-wrap').find( "ul.message-list li:nth-last-child(2)").find('.message').html())
+                                            JQObj(this).find('.user-detail').find('span').html(JQObj('.message-setting-wrap').find( "ul.message-list li:nth-last-child(2)").find('.user-detail').find('span').html())
+                                            var loginusername = 'Abdullah Habib';
+                                            var newObj = JQObj(this);
+                                            if(JQObj('.message-setting-wrap').find( "ul.message-list li:nth-last-child(2)").find('.user-detail').find('strong').html() == loginusername){
+                                                newObj.find('.mds').addClass('message-none');
+                                                newObj.find('.mds').removeClass('message');
+                                            } else {
+                                                newObj.find('.mds').addClass('message');
+                                                newObj.find('.mds').removeClass('message-none');
+                                            }
+                                        }
+                                    })
+
+                                }
+                                
+                            },
+                            error: function(e){
+                            },
+                            complete: function(e){
+                                stopLoading();
+                                JQObj('.setting-image').click(function(){
+                                        JQObj('.setting-block').slideToggle();
+                                });
+									JQObj(".messagelist-scroll").mCustomScrollbar({autoHideScrollbar: true,axis:"y"
+});
+								
+                            }
+                    });
+                		
+	});	
+	
+	JQObj('.setting-image').click(function(){
+		JQObj('.setting-block').slideToggle();
+
+	});
+        JQObj('.new-message-detail').hide();
+        
+        JQObj(document).mouseup(function (e)
+        {
+            var container = JQObj(".action-list");
+            if(JQObj('.action-list-blk').css('display') == 'block'){
+                if (!container.is(e.target) // if the target of the click isn't the container...
+                    && container.has(e.target).length === 0) // ... nor a descendant of the container
+                {
+                    JQObj('.action-list-blk').slideToggle();
+					JQObj('.action-list').removeClass('active');
+                }
+                    
+            	
+            } else {
+                if (!container.is(e.target) // if the target of the click isn't the container...
+                    && container.has(e.target).length === 0) // ... nor a descendant of the container
+                {
+                } else {
+                    JQObj('.action-list').toggleClass('active');
+                }
+            }
+            var container = JQObj(".list-msg-setting");
+            if(JQObj('.list-block-setting').css('display') == 'block'){
+                if (!container.is(e.target) // if the target of the click isn't the container...
+                    && container.has(e.target).length === 0) // ... nor a descendant of the container
+                {
+                    JQObj('.list-block-setting').slideToggle();
+					JQObj('.list-msg-setting').removeClass('active');
+                }
+            }else {
+                if (!container.is(e.target) // if the target of the click isn't the container...
+                    && container.has(e.target).length === 0) // ... nor a descendant of the container
+                {
+                } else {
+                    JQObj('.list-msg-setting').toggleClass('active');
+                }
+            } 
+        });
+        
+	 JQObj('.icheckbox').click(function(e){
+		e.stopImmediatePropagation() 
+		var $this = JQObj(this);
+		if($this.attr("checked") == "checked"){			
+			$this.closest("li").addClass("active");
+		}
+		else{
+			$this.closest("li").removeClass("active");
+		}
+		 
+                JQObj('.action-block').show(); 
+                JQObj('.setting-block').hide();
+                JQObj('.no-message-text').show(); 
+                JQObj('.message-setting-wrap').hide(); 
+                JQObj('.new-message-block').hide(); 
+                JQObj('.new-message-wrap').hide();
+	 });
+	 JQObj('.action-text').click(function(){
+	 	JQObj('.setting-block').slideToggle();
+	 });
+	 JQObj('.compose-text').live('click',function(){ 
+	 	JQObj('.no-message-text').hide(); 
+		JQObj('.message-setting-wrap').hide(); 
+		JQObj('.new-message-block').hide(); 
+		JQObj('.new-message-detail').show(); 
+	 });
+	 
+	 
+	 /*----message module----*/
+	 /*checkbox */
+	JQObj('.input-check').iCheck();
+	JQObj('.input-check').on('ifChecked', function(e){
+		e.stopImmediatePropagation() 
+		var objThis = JQObj(this);
+		console.log(objThis.parent().hasClass("checked"));
+		if(objThis.parent().hasClass("checked") == true){			
+			objThis.closest("li").addClass("active");
+		}
+		else{
+			objThis.closest("li").removeClass("active");
+		}
+		 
+		//JQObj('.action-block').show(); 
+                JQObj('.setting-block').hide();
+                JQObj('.no-message-text').show(); 
+                JQObj('.message-setting-wrap').hide(); 
+                JQObj('.new-message-block').hide(); 
+                JQObj('.new-message-detail').hide(); 
+	});
+        JQObj( ".icheckbox" ).bind( "ifClicked", function() {
+            setTimeout(function() {
+                var flg = true;
+                JQObj('.icheckbox').each(function(){
+                    if(JQObj(this).hasClass('checked')== true){
+                    if(flg == true){
+                        flg = false;
+                    }
+                }
+                })
+                if(flg == false){
+                    JQObj('.action-block').show();
+                } else {
+                    JQObj('.action-block').hide();
+                }
+            }, 100);
+        });
+        JQObj('.input-check').on('ifChecked', function(e){
+            /**/
+        });
+	/*checkbox */
+	JQObj('#selecctall').bind( "ifClicked", function() { //on click
+            if(!this.checked) { // check select status
+                JQObj('.input-check').iCheck('check');
+                setTimeout(function() {
+                    JQObj('#selecctall').iCheck('check');
+                }, 100);
+            }else{
+                JQObj('.input-check').iCheck('uncheck');
+                setTimeout(function() {
+                    JQObj('#selecctall').iCheck('uncheck');
+                }, 100);
+            }
+        });
+	 
+	 
+	
+});
+JQObj(window).load(function(){
+	JQObj(".message-scroll").mCustomScrollbar();
+	JQObj('#ui-id-1').niceScroll();
+})
+/*Autocomplete jquery*/
+
+JQObj(function() {
+            var projects = [{"firstName":"Manish","label":"Manish Jethva","lastName":"Jethva","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"manish.r.jethva@gmail.com","userId":"MTQ="},{"firstName":"Manish","label":"Manish Jethva","lastName":"Jethva","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"mrjethva13112@gmail.com","userId":"MTU="},{"firstName":"Jethva","label":"Jethva Manish","lastName":"Manish","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"","userId":"MjE="},{"firstName":"Dance","label":"Dance India Dance","lastName":"India Dance","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"did@indinic.com","userId":"MjY="},{"firstName":"manish's","label":"manish's jethva","lastName":"jethva","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"manish@gmail.com","userId":"Mjc="},{"firstName":"Manish","label":"Manish Ravol","lastName":"Ravol","profileImage":"<img src=\"http:\/\/dazzler.com\/uploads\/user\/30\/thumb\/1401436678_Garden.jpg\" height=\"52px\" width=\"52px\" >","userEmail":"agent@daz.com","userId":"MzA="},{"firstName":"Manish","label":"Manish Jethva","lastName":"Jethva","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"man@gmail.com","userId":"MzI="},{"firstName":"Manish","label":"Manish Jethva","lastName":"Jethva","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"mrjethva1312@gmail.com","userId":"MzY="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"lalal@lal.com","userId":"NDI="},{"firstName":"abc","label":"abc abc","lastName":"abc","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"abc@abc.com","userId":"NDM="},{"firstName":"test","label":"test test12334344444","lastName":"test12334344444","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"test@test.com","userId":"NDU="},{"firstName":"taha","label":"taha fakhruddin","lastName":"fakhruddin","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"tahafakhruddin@outlook.com","userId":"NTM="},{"firstName":"Taha","label":"Taha Fakhruddin","lastName":"Fakhruddin","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"tahafakhruddin786@gmail.com","userId":"NTQ="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"tahafakhruddin@aol.com","userId":"NTc="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"c.o.u.n.t@hotmail.com","userId":"NTg="},{"firstName":"Zoya","label":"Zoya Khan","lastName":"Khan","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"universe_7786@yahoo.co.in","userId":"NTk="},{"firstName":"Jobin","label":"Jobin Thomas","lastName":"Thomas","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"tahafakhruddin56@gmail.com","userId":"NjA="},{"firstName":"Dazzler","label":"Dazzler ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"","userId":"NjI="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"toziz@yahoo.com","userId":"NjM="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"Dillanjoones@rocketmail.com","userId":"NjQ="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"reverenddub1@gmail.com","userId":"NjU="},{"firstName":"Michael","label":"Michael Wingate","lastName":"Wingate","profileImage":"<img src=\"http:\/\/dazzler.com\/uploads\/user\/66\/thumb\/1408058056_NW73X7E8.jpeg\" height=\"52px\" width=\"52px\" >","userEmail":"michaelvwingate@gmail.com","userId":"NjY="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"reverenddub2@gmail.com","userId":"Njc="},{"firstName":"reverend","label":"reverend dub","lastName":"dub","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"","userId":"Njg="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"killerck112@hotmail.com","userId":"Njk="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"Mattkrissinger@gmail.com","userId":"NzA="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"Mattkrissinger@icloud.com","userId":"NzE="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"djgmix@djgmix.co.uk","userId":"NzI="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"jamesdown827@gmail.com","userId":"NzM="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"cmat1998@yahoo.com","userId":"NzQ="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"cdmss1998.1999@gmail.com","userId":"NzU="},{"firstName":"Henny","label":"Henny Hendrix","lastName":"Hendrix","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"","userId":"NzY="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"freddyfastmoney@gmail.com","userId":"Nzc="},{"firstName":"ASecret","label":"ASecret Source","lastName":"Source","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"asecretsource@yahoo.com","userId":"Nzg="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"jay.graync@gmail.com","userId":"Nzk="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"BENNETTOLUKE@HOTMAIL.CO.NZ","userId":"ODA="},{"firstName":"Luke","label":"Luke Bennetto","lastName":"Bennetto","profileImage":"<img src=\"http:\/\/dazzler.com\/uploads\/user\/81\/thumb\/1408151240_Auspecsnewcover.jpg\" height=\"52px\" width=\"52px\" >","userEmail":"bennettoluke@hotmail.co.nz","userId":"ODE="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"marketing@swimway.co.uk","userId":"ODI="},{"firstName":"Brown","label":"Brown Smith","lastName":"Smith","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"infobrownsmith@gmail.com","userId":"ODM="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"djeggo@gmail.com","userId":"ODQ="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"macnight@inwind.it","userId":"ODU="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"imogenht@gmail.com","userId":"ODY="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"imogen@theblowoutbar.co.uk","userId":"ODc="},{"firstName":"Imo\/\/294","label":"Imo\/\/294 days","lastName":"days","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"","userId":"ODg="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"Hernandezj6986@gmail.com","userId":"ODk="},{"firstName":"jdez6986","label":"jdez6986 ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"","userId":"OTA="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"mike@voxmirage.com","userId":"OTE="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"mike@mikestreng.com","userId":"OTI="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"MichaelHart_734@ymail.com","userId":"OTM="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"saquanreid28@gmail.com","userId":"OTQ="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"julieannmones19@yahoo.com","userId":"OTU="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"elevenent11@gmail.com","userId":"OTY="},{"firstName":"Chuck","label":"Chuck Spears","lastName":"Spears","profileImage":"<img src=\"http:\/\/dazzler.com\/uploads\/user\/97\/thumb\/1408323322_ChuckSpearsLogo-update.png\" height=\"52px\" width=\"52px\" >","userEmail":"chuckspearsinc@gmail.com","userId":"OTc="},{"firstName":"StancilboiDatNigga","label":"StancilboiDatNigga ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"","userId":"OTg="},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"arun_zayan@gmail.com","userId":"OTk="},{"firstName":"Home","label":"Home India","lastName":"India","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"arun.zayan@gmail.com","userId":"MTAw"},{"firstName":"arun_zayan","label":"arun_zayan arun_zayan","lastName":"arun_zayan","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"2925287202@twitter.com","userId":"MTAx"},{"firstName":"Abdul","label":"Abdul Rawoof","lastName":"Rawoof","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"mail2rawoof@yahoo.com","userId":"MTAy"},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"a.prabhakar@noonic.com","userId":"MTAz"},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"mail2rawoof@gmail.com","userId":"MTA0"},{"firstName":"","label":" ","lastName":"","profileImage":"<img src=\"http:\/\/dazzler.com\/images\/noimage.gif\" height=\"52px\" width=\"52px\" >","userEmail":"arun.x@gmail.com","userId":"MTA1"}]    
+        JQObj("#project").autocomplete({
+            minLength: 0,
+            source: projects,
+            focus: function(event, ui) {
+                //JQObj("#project").val(ui.item.firstName+' '+ui.item.lastName);
+                return false;
+            },
+            select: function(event, ui) {
+                JQObj("#project").val(ui.item.firstName+' '+ui.item.lastName);
+                JQObj("#msg_id").val(ui.item.userId);
+                return false;
+            }
+        })
+                .autocomplete("instance")._renderItem = function(ul, item) {
+            return JQObj("<li>")
+                    .append("<a>"+ item.profileImage + "<span class='ui-detail'><span class='ui-label'>" + item.firstName +' '+item.lastName + "</span><span class='ui-desc'>" + item.userEmail + "</span></span></a>")
+                    .appendTo(ul);
+        };
+    });
+	/*Autocomplete jquery*/
+
+function replyMessage(){
+                startLoading();
+            if(JQObj('#replymessage').validationEngine('validate')){
+                var str = JQObj( "#replymessage").serialize();
+                JQObj.ajax({
+                        type:'post',
+                        url:'/ajax/message/replytousermessage',			
+                        data:str,
+                        success: function(html){
+                            if(html == 'success'){
+                               // $('.message-list li').trigger('click');
+                               JQObj('.demo-list >.message-detail').each(function(){
+                                    if(JQObj(this).find('strong').html()==JQObj('.user-message-text>span').html()){
+                                        JQObj(this).trigger('click');
+                                    }
+                                })
+                            }
+                        },
+                        error: function(e){
+                        },
+                        complete: function(e){
+                            stopLoading();
+                            JQObj('.setting-image').click(function(){
+                                    JQObj('.setting-block').slideToggle();
+                            });
+                        }
+                });
+            }else {
+                stopLoading();
+            }
+        }
+
+function sendMessage(){
+                startLoading();
+            if(JQObj('#sendMessage').validationEngine('validate')){
+                var str = JQObj( "#sendMessage").serialize();
+                JQObj.ajax({
+                        type:'post',
+                        url:'/ajax/message/replytousermessage',			
+                        data:str,
+                        success: function(html){
+                            if(html == 'success'){
+                                window.location= "/message";
+                            }
+                        },
+                        error: function(e){
+                        },
+                        complete: function(e){
+                            stopLoading();
+                        }
+                });
+            }else {
+                stopLoading();
+            }
+        }
+function setAction(actionName){
+    JQObj('#userActionName').val(actionName);
+    if(JQObj('#userlist').validationEngine('validate')){
+        JQObj('#userlist').submit();
+    }
+}
+
+   
+
+</script>
+<div class="message-box cf">
+    <div class="top-message-block cf">
+    	<span class="inbox-block"><span>Inbox</span></span>
+    	<span class="compose-text">Compose</span>
+    </div>
+    <div class="message-top-block cf">
+        <div class="message-block">
+        	<div class="action-block cf">
+                <input type="checkbox" id="selecctall" value="" class="input-check">
+            	<span class="select-text">Select All</span>
+                <div class="action-list"><span class="action-text">Action</span> 
+                        <div class="setting-block action-list-blk">
+                                <ul class="setting-list cf">
+                                    <li class="read"><a href="javascript:void(0)" onclick="setAction('read')" title="Mark as Read">Mark as Read</a></li>
+                                    <li class="delete"><a href="javascript:void(0)" onclick="setAction('delete')" title="Delete Forever">Delete Forever</a></li>
+                                </ul>
+                        </div>	
+                </div>
+            </div>	
+            <div class="message-scroll light" data-mcs-theme="minimal-dark">
+				 <form id="userlist" method="post" action="/message/setaction" >
+						<ul class="message-list cf">               
+							<input type="hidden" name="action" id="userActionName" value="" />
+															<li id="NTQ=" class="">
+									<div class="message-wrap demo-list cf">
+										<input type="checkbox" name="user_id[]" id="user_id_54" value="54" class="input-check validate[minCheckbox[1]]">
+										
+										<span class="profile-img">
+																						<img src="http://dazzler.com/images/noimage.gif" height="52px" width="52px"  >					                        
+																					</span>
+										<div class="message-detail">
+											<span class="user-detail cf"><strong>Taha Fakhruddin</strong><span>11 Weeks Ago</span></span>
+											<!--<span class="message">hi</span>-->
+																							<span class="mds message">hello again</span>
+																					</div>
+									</div>
+								</li>
+							                
+	            </ul>
+			</form>
+			</div>
+        </div>
+        <div class="message-right-block">
+            <span class="no-message-text">No Message Selected</span>
+            <div id="msg-setting-wrap" class="message-setting-wrap">
+            </div>
+            <div class="new-message-block cf">
+                <h3>New Message</h3> 
+                <div class="left-block">
+                    <span>To</span>
+                    <span>Message</span>
+                </div>
+            </div>
+            <div class="new-message-detail cf">
+                    <h3>New Message</h3>
+                    <form id='sendMessage'>
+                    <div class="left-block">
+                        <ul class="new-message-list cf">
+                        	<li>
+                            	<label>To</label>
+                                <input id="project"  class="message-textbox validate[message[msg_id]]" placeholder="Enter user name">
+                                <input type="hidden" id="project-id">
+                                <p id="project-description"></p>
+                            </li>
+                            <li>
+                            	<label>Mesaage</label>
+                                <input class="validate[required]" type="hidden" id="msg_id" name='id'>
+                                <textarea id="send_message" name="message" class="message-textarea validate[required]" placeholder="Enter message"></textarea>
+                            </li>
+                        </ul>
+                        <a href="javascript:void(0)" onclick="sendMessage()" class="reply-text">Send</a>
+                        
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</div>                <div class="cm-fl Main_part4 margin  foll_pop_wrap">
+                	<div id="myModal17" class="reveal-modal" style="margin:284px -124px 188px -164px;">
+						<form action="/user/userdetails/user_id/52" method="post" name="frmUserMediaHd" id="frmUserMediaHd" action="" enctype="multipart/form-data">
+                            <div class="cm-fl darg_up">
+                            <div class="drag_title">Drag & drop sounds or videos here<br /><br />- or -</div>
+                            <div class="choose_file">
+                                <span>Choose sounds or videos</span>
+                                <input type="file" class="validate[checkFileType[mp3|MP3|mp4|MP4],maxFileSize[209715200]]" name="file[]" id="file_upload" onchange="javascript: validateFrm('frmUserMediaHd');" value="Choose sounds or videos" multiple />
+                            </div>
+                            <br />
+                            <!--<span class="space_count">You have used - % of your UNLIMITED free space</span><br />--><span class="space_count"></span><br />
+                            <a href="javascript:void(0);" class="fil_imp">import</a><br />
+                            <span class="space_count">IMPORT MEDIA from services such as</span><br />
+                            <div class="socia_pop">
+                                <a href="javascript:void(0);" class="you_pop">youtube</a>
+                                <a href="javascript:void(0);" class="twit_pop">Twitter</a>
+                                <a href="javascript:void(0);" class="inst_pop">instagram</a>
+                                <a href="javascript:void(0);" class="gpl_pop">GPlus</a>
+                                <a href="javascript:void(0);" class="flick_pop">flicker</a>
+                                <a href="javascript:void(0);" class="fb_pop">facebook</a>
+                                <a href="javascript:void(0);" class="dp_pop">dropbox</a>
+                                <a href="javascript:void(0);" class="vim_pop">vimeo</a>
+                            </div>
+                        </div>
+                        </form>
+                </div>
+                </div>
+            </div>			  					 
+			            <div class="user_bot_bar">
+                <div class="cm-fl img_add">
+                        <form action="/user/userdetails/user_id/52" method="post" name="frmUserMedia" id="frmUserMedia" action="" enctype="multipart/form-data">
+                        <div class="choosefile-block">
+                            <a href="javascript:void(0);" class="add_icon"><img src="http://dazzler.com/images/add.jpg" alt="" border="0" />
+                            <input type="file" class="choosefile-textbox validate[checkFileType[mp3|MP3|mp4|MP4],maxFileSize[209715200]]" name="file[]" id="file_upload" onchange="javascript: validateFrm('frmUserMedia');" value="Choose sounds or videos" multiple />
+                             </a>
+                        </div>
+                        </form>
+                </div>
+                <div class="cm-fr group_faq">
+                    <div class="cm-fl faq">
+                    <a href="javascript:void(0);"><img src="http://dazzler.com/images//group-icon.jpg" alt="" border="0" /></a>
+                        <div class="grp_frnd">
+                            <form method="post" name="inviteFriend" id="inviteFriend" onsubmit="return false;">
+                            <span class="frnd_title">Your friends of Dazzler</span>
+                            <input type="text" id="inv_friend" name="inv_friend" class="validate[required,custom[custom_email]] inv_frnd inv_frnd_add"/>
+                            <span class="invt_frnd">Invite a friend</span>
+                            <img src="http://dazzler.com/images//downarrow1.png" class="downarr"/>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="cm-fl faq">
+                        <img src="http://dazzler.com/images//faq-icon.jpg" alt="" />
+                        <ul>
+                            <li><a href="/index/howtousesite">How to use this site?</a></li>
+                            <li><a href="/index/howtopostimage">How to post a image?</a></li>
+                            <li><a href="javascript: accessDenied();">How to post a video?</a></li>
+                            <li><a href="/index/howtopostaudio">How to post a audio?</a></li>
+                            <img src="http://dazzler.com/images/downarrow1.png" class="downarr"/>
+                        </ul>
+                    </div>
+                </div>
+      		</div>
+     		            <!-- Footer -->
+             
+<div id="footer">
+	<div class="footer-wrap cf">
+		<div class="footer-left">
+			<ul class="footer-links cf">
+				<li><a href="/" title="Home">Home</a></li>
+				<li><a href="/index/about" title="About">About</a></li>
+				<li><a href="/index/support" title="Help &amp; Support">Help &amp; Support</a></li>
+				<li><a href="/index/contact" title="Contact">Contact</a></li>
+				<li><a href="/index/termcondition" title=" Terms &amp; Conditions"> Terms &amp; Conditions</a></li>
+				<li><a href="/index/privancypolicy" title="Privacy Policy">Privacy Policy</a></li>
+			</ul>
+			<div class="copyright">Copyright &copy; 2012–2014 Dazzler.com All videos & sounds © belong to their respective owners.</div>
+		</div>
+		<div class="footer-right">
+        <a href="javascript:void(0)" title="App Store" class="apple-img"><img src="http://dazzler.com/images/app-store-img.jpg" alt="App Store " title="App Store"></a>
+		<a href="javascript:void(0)" title="google play" class="googleplay-img"><img src="http://dazzler.com/images/googleplay-img.jpg" alt="google play" title="google play"></a>
+			
+		</div>
+	</div>
+
+</div>	
+        </div>
+    </body>
+</html>

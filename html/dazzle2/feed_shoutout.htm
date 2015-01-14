@@ -1,0 +1,710 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" dir="ltr">
+
+<head lang="" dir="ltr">
+<meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="" />
+<meta name="description" content="Meta Description" />
+<meta name="keywords" content="Meta Keywords" />
+<title>Dazzler</title>
+
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="assets/css/bootstrap.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="assets/css/jquery.videocontrols.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="assets/css/msgboxlight.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all" />
+		
+	
+		<script type="text/javascript" src="assets/js/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.msgBox.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.videocontrols.js"></script>
+		<script type="text/javascript" src="assets/js/tools.js"></script>
+	<!--[if lt IE 9]>
+	        <script type="text/javascript" src="http://fusionfit.co/beta/js/respond.min.js"></script>
+	        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	
+	
+	</script>
+
+
+</head>
+
+<body>
+
+
+<div class="wrapper">
+
+	<header>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid nheader">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href=""><img src="images/logo.png"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+      <ul class="nav navbar-nav navbar-right">
+      	<li>
+      	 	<form name="searchform" id="searchform">
+			<div class="inner-addon right-addon">
+			   <i class="fa fa-search"></i><input type="text" class="searchtxt form-control" placeholder="Search" />
+			</div>
+			</form>
+		</li>
+      	
+      	      	
+      	
+       	       	<li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell-o"></i> <span class="nmgs lbl txt-notif">18</span></a>
+          <ul class="dropdown-menu arrow_box ddnotif notif-list" role="menu">          		
+					<li class=""><i class="fa fa-thumbs-o-up"></i> 3 commented your Video <span class="notif-time">few seconds ago</span></li>
+					<li class=""><i class="fa fa-thumbs-o-up"></i> 2 liked your profile <span class="notif-time">2 minutes ago</span></li>
+					<li class=""><i class="fa fa-thumbs-o-up"></i> 2 dazzled you <span class="notif-time">2 minutes ago</span></li>
+					<li class=""><i class="fa fa-thumbs-o-up"></i> 1 followed you <span class="notif-time">20 minutes ago</span></li>
+          </ul>
+       	</li>
+       	       	<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="modal" data-target="#uploadfile"><i class="fa fa-upload"></i> <span class="nmgs lbl">upload</span></a>
+       </li>
+      	 
+       <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img class="profileicon lbl" src="images/profile/noimage.jpg" border="0"> <span class="fa fa-angle-down"></span></a>
+          <ul class="dropdown-menu arrow_box" role="menu">
+          		<li><a href="user/profile"> Profile</a></li>
+          		<li><a href="user/profile"> Account Setting</a></li>
+          		<li><a href="user/logout">   Logout</a></li>
+          </ul>
+       </li>
+       
+       
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</header>
+	
+	<div class="container section">
+	
+		
+	<div class="row vfeed">
+		<div class="col-sm-2">
+			<div class="pr_brief pull-left">
+			 		<img src="images/profile/1405657645_photo.jpg" width="150" height="150" />
+			 		<span class="profile_name">Tejas Vyas</span>
+			 </div>
+		</div>
+		
+		
+		<div class="col-sm-10">
+			
+			<div class="videoUiWrapper thumbnail">
+			  	<div class="vc-player"><video  id="featurevideo" class="mediumsize">
+			    <source src="images/media/1407828637_Test.mp4" type="video/mp4">
+			    Your browser does not support the video tag.
+			  	</video>
+				</div>
+			</div>
+			
+			<div class="pdescr">
+				<h2>New Dance Setps</h2>
+					
+				New Dance Setps				 				
+				<div class="pstats row">
+					<div class="col-md-6">
+					  <i class="fa fa-eye fa-2x"></i> &nbsp; 1 Views
+					</div>
+					<div class="col-md-3">
+					  <a href="ajax/like/35" class="dz-like like"><i class="fa fa-thumbs-o-up fa-2x"></i>I Like this</a>
+					</div>
+					<div class="col-md-3">
+					 <a href="ajax/dislike/35" class="dz-dislike dislike"><i class="fa fa-thumbs-o-down fa-2x"></i>I Dislike this</a>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+		</div>
+	</div> <!--  row ends -->
+	
+				
+	<div class="row vfeed">
+		<div class="col-sm-2">
+			<div class="pr_brief pull-left">
+			 		<img src="images/profile/1401257412_1.jpg" width="150" height="150" />
+			 		<span class="profile_name">Manish Jethva</span>
+			 </div>
+		</div>
+		<div class="col-sm-10">
+			
+			
+			<div class="shoutout">
+				<div class="sodetls i-shoutout"">
+					<img src="images/shoutpic1.jpg">
+					Shoutout to @username
+				</div>
+			</div>
+			
+			
+			
+		</div>
+	</div> <!--  row ends -->
+	
+				
+	<div class="row vfeed">
+		<div class="col-sm-2">
+			<div class="pr_brief pull-left">
+			 		<img src="images/profile/1405657645_photo.jpg" width="150" height="150" />
+			 		<span class="profile_name">Tejas Vyas</span>
+			 </div>
+		</div>
+		<div class="col-sm-10">
+			
+			<div class="videoUiWrapper thumbnail">
+			  	<div class="vc-player"><video  id="featurevideo" class="mediumsize">
+			    <source src="images/media/1405659776_oceans.mp4" type="video/mp4">
+			    Your browser does not support the video tag.
+			  	</video>
+				</div>
+			</div>
+			
+			<div class="pdescr">
+				<h2>Sea Fish Video</h2>
+					
+				Sea Fish Video				 				
+				<div class="pstats row">
+					<div class="col-md-6">
+					  <i class="fa fa-eye fa-2x"></i> &nbsp; 5 Views
+					</div>
+					<div class="col-md-3">
+					  <a href="ajax/like/29" class="dz-like like"><i class="fa fa-thumbs-o-up fa-2x"></i>I Like this</a>
+					</div>
+					<div class="col-md-3">
+					 <a href="ajax/dislike/29" class="dz-dislike dislike"><i class="fa fa-thumbs-o-down fa-2x"></i>I Dislike this</a>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+		</div>
+	</div> <!--  row ends -->
+	
+				
+	<div class="row vfeed">
+		<div class="col-sm-2">
+			<div class="pr_brief pull-left">
+			 		<img src="images/profile/1405657645_photo.jpg" width="150" height="150" />
+			 		<span class="profile_name">Tejas Vyas</span>
+			 </div>
+		</div>
+		<div class="col-sm-10">
+			
+			<div class="videoUiWrapper thumbnail">
+			  	<div class="vc-player"><video  id="featurevideo" class="mediumsize">
+			    <source src="images/media/1407831348_TestYourAwarenessDoTheTest.mp4" type="video/mp4">
+			    Your browser does not support the video tag.
+			  	</video>
+				</div>
+			</div>
+			
+			<div class="pdescr">
+				<h2>Test Answer</h2>
+					
+				Test Answer				 				
+				<div class="pstats row">
+					<div class="col-md-6">
+					  <i class="fa fa-eye fa-2x"></i> &nbsp; 5 Views
+					</div>
+					<div class="col-md-3">
+					  <a href="ajax/like/34" class="dz-like like"><i class="fa fa-thumbs-o-up fa-2x"></i>I Like this</a>
+					</div>
+					<div class="col-md-3">
+					 <a href="ajax/dislike/34" class="dz-dislike dislike"><i class="fa fa-thumbs-o-down fa-2x"></i>I Dislike this</a>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+		</div>
+	</div> <!--  row ends -->
+	
+				
+	
+				
+	<div class="row vfeed">
+		<div class="col-sm-2">
+			<div class="pr_brief pull-left">
+			 		<img src="images/profile/noimage.jpg" width="150" height="150" />
+			 		<span class="profile_name">Manal Shah</span>
+			 </div>
+		</div>
+		<div class="col-sm-10">
+			
+			<div class="videoUiWrapper thumbnail">
+			  	<div class="vc-player"><video  id="featurevideo" class="mediumsize">
+			    <source src="images/media/1402296140_oceans.mp4" type="video/mp4">
+			    Your browser does not support the video tag.
+			  	</video>
+				</div>
+			</div>
+			
+			<div class="pdescr">
+				<h2>rock dance</h2>
+					
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies vitae ante a bibendum. Donec ullamcorper a erat in condimentum.				 				
+				<div class="pstats row">
+					<div class="col-md-6">
+					  <i class="fa fa-eye fa-2x"></i> &nbsp; 14 Views
+					</div>
+					<div class="col-md-3">
+					  <a href="ajax/like/14" class="dz-like like"><i class="fa fa-thumbs-o-up fa-2x"></i>I Like this</a>
+					</div>
+					<div class="col-md-3">
+					 <a href="ajax/dislike/14" class="dz-dislike dislike"><i class="fa fa-thumbs-o-down fa-2x"></i>I Dislike this</a>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+		</div>
+	</div> <!--  row ends -->
+	
+				
+	<div class="row vfeed">
+		<div class="col-sm-2">
+			<div class="pr_brief pull-left">
+			 		<img src="images/profile/1405657645_photo.jpg" width="150" height="150" />
+			 		<span class="profile_name">Tejas Vyas</span>
+			 </div>
+		</div>
+		<div class="col-sm-10">
+			
+			<div class="videoUiWrapper thumbnail">
+			  	<div class="vc-player"><video  id="featurevideo" class="mediumsize">
+			    <source src="images/media/1405661976_oceans.mp4" type="video/mp4">
+			    Your browser does not support the video tag.
+			  	</video>
+				</div>
+			</div>
+			
+			<div class="pdescr">
+				<h2>Deep Sea</h2>
+					
+				Deep Sea				 				
+				<div class="pstats row">
+					<div class="col-md-6">
+					  <i class="fa fa-eye fa-2x"></i> &nbsp; 14 Views
+					</div>
+					<div class="col-md-3">
+					  <a href="ajax/like/31" class="dz-like like"><i class="fa fa-thumbs-o-up fa-2x"></i>I Like this</a>
+					</div>
+					<div class="col-md-3">
+					 <a href="ajax/dislike/31" class="dz-dislike dislike"><i class="fa fa-thumbs-o-down fa-2x"></i>I Dislike this</a>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+		</div>
+	</div> <!--  row ends -->
+	
+				
+	<div class="row vfeed">
+		<div class="col-sm-2">
+			<div class="pr_brief pull-left">
+			 		<img src="images/profile/1401257412_1.jpg" width="150" height="150" />
+			 		<span class="profile_name">Manish Jethva</span>
+			 </div>
+		</div>
+		<div class="col-sm-10">
+			
+			<div class="videoUiWrapper thumbnail">
+			  	<div class="vc-player"><video  id="featurevideo" class="mediumsize">
+			    <source src="images/media/1402296140_oceans.mp4" type="video/mp4">
+			    Your browser does not support the video tag.
+			  	</video>
+				</div>
+			</div>
+			
+			<div class="pdescr">
+				<h2>Sing a Song</h2>
+					
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies vitae ante a bibendum. Donec ullamcorper a erat in condimentum.				 				
+				<div class="pstats row">
+					<div class="col-md-6">
+					  <i class="fa fa-eye fa-2x"></i> &nbsp; 16 Views
+					</div>
+					<div class="col-md-3">
+					  <a href="ajax/like/22" class="dz-like like"><i class="fa fa-thumbs-o-up fa-2x"></i>I Like this</a>
+					</div>
+					<div class="col-md-3">
+					 <a href="ajax/dislike/22" class="dz-dislike dislike"><i class="fa fa-thumbs-o-down fa-2x"></i>I Dislike this</a>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+		</div>
+	</div> <!--  row ends -->
+	
+				
+	<div class="row vfeed">
+		<div class="col-sm-2">
+			<div class="pr_brief pull-left">
+			 		<img src="images/profile/1401257412_1.jpg" width="150" height="150" />
+			 		<span class="profile_name">Manish Jethva</span>
+			 </div>
+		</div>
+		<div class="col-sm-10">
+			
+			<div class="videoUiWrapper thumbnail">
+			  	<div class="vc-player"><video  id="featurevideo" class="mediumsize">
+			    <source src="images/media/1402296140_oceans.mp4" type="video/mp4">
+			    Your browser does not support the video tag.
+			  	</video>
+				</div>
+			</div>
+			
+			<div class="pdescr">
+				<h2>Sport-1</h2>
+					
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies vitae ante a bibendum. Donec ullamcorper a erat in condimentum.				 				
+				<div class="pstats row">
+					<div class="col-md-6">
+					  <i class="fa fa-eye fa-2x"></i> &nbsp; 16 Views
+					</div>
+					<div class="col-md-3">
+					  <a href="ajax/like/24" class="dz-like like"><i class="fa fa-thumbs-o-up fa-2x"></i>I Like this</a>
+					</div>
+					<div class="col-md-3">
+					 <a href="ajax/dislike/24" class="dz-dislike dislike"><i class="fa fa-thumbs-o-down fa-2x"></i>I Dislike this</a>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+		</div>
+	</div> <!--  row ends -->
+	
+				
+	<div class="row vfeed">
+		<div class="col-sm-2">
+			<div class="pr_brief pull-left">
+			 		<img src="images/profile/1405663380_old_logo.png" width="150" height="150" />
+			 		<span class="profile_name">IndiaNIC Info</span>
+			 </div>
+		</div>
+		<div class="col-sm-10">
+			
+			<div class="videoUiWrapper thumbnail">
+			  	<div class="vc-player"><video  id="featurevideo" class="mediumsize">
+			    <source src="images/media/1405664173_oceans.mp4" type="video/mp4">
+			    Your browser does not support the video tag.
+			  	</video>
+				</div>
+			</div>
+			
+			<div class="pdescr">
+				<h2>Deep Sea</h2>
+					
+				Sea				 				
+				<div class="pstats row">
+					<div class="col-md-6">
+					  <i class="fa fa-eye fa-2x"></i> &nbsp; 20 Views
+					</div>
+					<div class="col-md-3">
+					  <a href="ajax/like/32" class="dz-like like"><i class="fa fa-thumbs-o-up fa-2x"></i>I Like this</a>
+					</div>
+					<div class="col-md-3">
+					 <a href="ajax/dislike/32" class="dz-dislike dislike"><i class="fa fa-thumbs-o-down fa-2x"></i>I Dislike this</a>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+		</div>
+	</div> <!--  row ends -->
+	
+				
+	<div class="row vfeed">
+		<div class="col-sm-2">
+			<div class="pr_brief pull-left">
+			 		<img src="images/profile/1401257412_1.jpg" width="150" height="150" />
+			 		<span class="profile_name">Manish Jethva</span>
+			 </div>
+		</div>
+		<div class="col-sm-10">
+			
+			<div class="videoUiWrapper thumbnail">
+			  	<div class="vc-player"><video  id="featurevideo" class="mediumsize">
+			    <source src="images/media/1402296140_oceans.mp4" type="video/mp4">
+			    Your browser does not support the video tag.
+			  	</video>
+				</div>
+			</div>
+			
+			<div class="pdescr">
+				<h2>Cooking 1</h2>
+					
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies vitae ante a bibendum. Donec ullamcorper a erat in condimentum.				 				
+				<div class="pstats row">
+					<div class="col-md-6">
+					  <i class="fa fa-eye fa-2x"></i> &nbsp; 23 Views
+					</div>
+					<div class="col-md-3">
+					  <a href="ajax/like/21" class="dz-like like"><i class="fa fa-thumbs-o-up fa-2x"></i>I Like this</a>
+					</div>
+					<div class="col-md-3">
+					 <a href="ajax/dislike/21" class="dz-dislike dislike"><i class="fa fa-thumbs-o-down fa-2x"></i>I Dislike this</a>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+		</div>
+	</div> <!--  row ends -->
+	
+				
+	<div class="row vfeed">
+		<div class="col-sm-2">
+			<div class="pr_brief pull-left">
+			 		<img src="images/profile/noimage.jpg" width="150" height="150" />
+			 		<span class="profile_name">Manal Shah</span>
+			 </div>
+		</div>
+		<div class="col-sm-10">
+			
+			<div class="videoUiWrapper thumbnail">
+			  	<div class="vc-player"><video  id="featurevideo" class="mediumsize">
+			    <source src="images/media/1402296140_oceans.mp4" type="video/mp4">
+			    Your browser does not support the video tag.
+			  	</video>
+				</div>
+			</div>
+			
+			<div class="pdescr">
+				<h2>Nice delicious dish</h2>
+					
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies vitae ante a bibendum. Donec ullamcorper a erat in condimentum.				 				
+				<div class="pstats row">
+					<div class="col-md-6">
+					  <i class="fa fa-eye fa-2x"></i> &nbsp; 26 Views
+					</div>
+					<div class="col-md-3">
+					  <a href="ajax/like/13" class="dz-like like"><i class="fa fa-thumbs-o-up fa-2x"></i>I Like this</a>
+					</div>
+					<div class="col-md-3">
+					 <a href="ajax/dislike/13" class="dz-dislike dislike"><i class="fa fa-thumbs-o-down fa-2x"></i>I Dislike this</a>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+		</div>
+	</div> <!--  row ends -->
+	
+				
+	<div class="row vfeed">
+		<div class="col-sm-2">
+			<div class="pr_brief pull-left">
+			 		<img src="images/profile/1399615183_Tree.jpg" width="150" height="150" />
+			 		<span class="profile_name">Bhavik Dutt</span>
+			 </div>
+		</div>
+		<div class="col-sm-10">
+			
+			<div class="videoUiWrapper thumbnail">
+			  	<div class="vc-player"><video  id="featurevideo" class="mediumsize">
+			    <source src="images/media/1402296140_oceans.mp4" type="video/mp4">
+			    Your browser does not support the video tag.
+			  	</video>
+				</div>
+			</div>
+			
+			<div class="pdescr">
+				<h2>Cooking 2 123123</h2>
+					
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies vitae ante a bibendum. Donec ullamcorper a erat in condimentum.				 				
+				<div class="pstats row">
+					<div class="col-md-6">
+					  <i class="fa fa-eye fa-2x"></i> &nbsp; 29 Views
+					</div>
+					<div class="col-md-3">
+					  <a href="ajax/like/26" class="dz-like like"><i class="fa fa-thumbs-o-up fa-2x"></i>I Like this</a>
+					</div>
+					<div class="col-md-3">
+					 <a href="ajax/dislike/26" class="dz-dislike dislike"><i class="fa fa-thumbs-o-down fa-2x"></i>I Dislike this</a>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+		</div>
+	</div> <!--  row ends -->
+	
+					
+	</div>  <!--  section ends -->
+
+
+ 
+
+
+	
+	
+	<footer class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2"><h2>Dazzler</h2>
+				<ul>
+					<li><a href="aboutus">About Us</a></li>
+					<li><a href="asdad">Link 2</a></li>
+					<li><a href="asdad">Link 3</a></li>
+					<li><a href="asdad">Developers</a></li>
+					<li><a href="asdad">Jobs</a></li>
+				</ul>
+			</div>
+			<div class="col-md-2"><h2>Help</h2>
+				<ul>
+					<li><a href="asdad">Help Center</a></li>
+					<li><a href="asdad">Basics</a></li>
+					<li><a href="asdad">Video School</a></li>
+					<li><a href="help/faq">FAQ</a></li>
+					<li><a href="asdad">Forums</a></li>
+				</ul>
+			</div>
+			<div class="col-md-2"><h2>More</h2>
+				<ul>
+					<li><a href="asdad">On Demand</a></li>
+					<li><a href="asdad">Everywhere</a></li>
+					<li><a href="asdad">Upload</a></li>
+					<li><a href="asdad">Sitemap</a></li>
+				</ul>
+	
+			</div>
+			<div class="col-md-3"><h2>Legal</h2>
+				<ul>
+					<li><a href="terms">Terms & Conditions</a></li>
+					<li><a href="asdad">Website Terms of Use</a></li>
+					<li><a href="asdad">Website Terms of Use</a></li>
+					<li><a href="asdad">Website Terms of Use</a></li>
+				</ul>
+
+			</div>
+			<div class="col-md-3 mapps">
+					<br><br><img src="images/astore.jpg"><br><br><img src="images/gplay.jpg">	
+
+			</div>		
+		</div>		
+	</div>
+
+	<div class="container-fluid copyright">
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">Copyright &copy; 2012-2014 Dazzler.com. All videos & sounds &copy; belong to their respective owners.</div>
+				<div class="col-md-3">
+					<div class="social pull-right">
+					<i class="fa fa-facebook-square"></i>
+					<i class="fa fa-twitter-square"></i>
+					</div>
+				</div>
+			</div>		
+		</div>
+		
+	</div>
+</footer>
+	
+</div>
+
+	
+	
+		
+</body>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade uploadmodal" id="uploadfile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Upload</h4>
+      </div>
+      <div class="modal-body">
+      
+      	 <form class="form-horizontal"  role="form" enctype="application/x-www-form-urlencoded" method="post" action="media/upload" >
+      	 
+      	 		<div class="form-group">
+      	 			<label for="title" class="col-md-3">Title</label>
+      	 			<div class=" col-md-9">
+      	 			<input class="form-control" placeholder="" id="title" name="title" required >
+      	 			</div>
+      	 		</div>
+      	 
+      	 
+      	 		<div class="form-group">
+      	 			<label for="tags" class="col-md-3">Tags</label>
+      	 			<div class=" col-md-9">
+      	 				<input class="form-control" placeholder="" id="tags" name="tags" required >
+      	 			</div>
+      	 		</div>
+
+
+      	 		<div class="form-group">
+      	 			<label for="descr" class="col-md-3">Description</label>
+      	 			<div class=" col-md-9">
+      	 			<textarea class="form-control" placeholder="" rows="5" id="descr" name="descr" required ></textarea>
+      	 			</div>      				
+      	 		</div>
+      	 
+      	 
+      	 		<div class="form-group">
+      	 			<label for="descr" class="col-md-3">Description</label>
+      	 			<div class=" col-md-9">
+      	 			<input type="file" class="form-control" placeholder="" id="title" name="title" required >
+      	 			</div>      				
+      	 		</div>
+      	 
+      	 </form>
+				       
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Upload</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+
